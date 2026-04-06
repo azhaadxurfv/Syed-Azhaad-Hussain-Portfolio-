@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Aqua Blue + Black + White Theme (Default) */
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 200 100% 95%;
+    --card: 220 20% 8%;
+    --card-foreground: 200 100% 95%;
+    --popover: 220 20% 8%;
+    --popover-foreground: 200 100% 95%;
+    --primary: 185 100% 50%;
+    --primary-foreground: 220 20% 4%;
+    --secondary: 200 60% 15%;
+    --secondary-foreground: 185 100% 50%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 200 30% 60%;
+    --accent: 185 80% 40%;
+    --accent-foreground: 200 100% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 200 30% 18%;
+    --input: 200 30% 18%;
+    --ring: 185 100% 50%;
+    --radius: 0.75rem;
+    --neon-glow: 185 100% 50%;
+    --neon-glow-rgb: 0, 230, 230;
+    --glass-bg: 220 20% 8%;
+    --glass-border: 200 30% 25%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Red & Black Theme */
+  .theme-red {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 40% 12%;
+    --secondary-foreground: 0 100% 55%;
+    --muted: 0 10% 12%;
+    --muted-foreground: 0 15% 55%;
+    --accent: 0 80% 45%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 0 20% 15%;
+    --input: 0 20% 15%;
+    --ring: 0 100% 55%;
+    --neon-glow: 0 100% 55%;
+    --neon-glow-rgb: 255, 40, 40;
+    --glass-bg: 0 0% 7%;
+    --glass-border: 0 20% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: hsl(var(--glass-bg) / 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border) / 0.3);
+  }
+  .neon-text {
+    text-shadow: 0 0 10px rgba(var(--neon-glow-rgb), 0.8),
+                 0 0 30px rgba(var(--neon-glow-rgb), 0.4),
+                 0 0 60px rgba(var(--neon-glow-rgb), 0.2);
+  }
+  .neon-border {
+    box-shadow: 0 0 10px rgba(var(--neon-glow-rgb), 0.3),
+                inset 0 0 10px rgba(var(--neon-glow-rgb), 0.1);
+  }
+  .neon-glow {
+    box-shadow: 0 0 15px rgba(var(--neon-glow-rgb), 0.5),
+                0 0 30px rgba(var(--neon-glow-rgb), 0.3),
+                0 0 60px rgba(var(--neon-glow-rgb), 0.15);
+  }
+}
+
+/* Custom cursor styles */
+body, button, input, textarea, select {
+  cursor: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
+}
+
+html {
+  scroll-behavior: smooth;
+}
